@@ -37,7 +37,7 @@
     }
 
     .weather-data-cards {
-        height: 85vh;
+        height: 80vh;
         overflow-y: scroll;
     }
 }
