@@ -16,9 +16,7 @@ export class HomeContentComponent implements OnInit, DoCheck {
   isCelcius = true;
   utils = new Utils();
   currentData: WeatherData = JSON.parse(localStorage.getItem('current-data')!);
-  ;
   constructor(private service: Service) {
-    this.currentData = JSON.parse(localStorage.getItem('current-data')!);
   }
 
   ngDoCheck(): void {

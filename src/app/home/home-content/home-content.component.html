@@ -6,13 +6,14 @@
         <p class="city-name normal-text">
             {{currentData.name}}, {{currentData.country}}
         </p>
-        <div class="add-to-favourite" *ngIf="!isAddedToFavourite(currentData.name);else nonFavourite">
-            <img src="assets/home/icon_favourite.png" alt="Favourite" (click)="addToFavourite()">
+        <div class="add-to-favourite" (click)="addToFavourite()"
+            *ngIf="!isAddedToFavourite(currentData.name);else nonFavourite">
+            <img src="assets/home/icon_favourite.png" alt="Favourite">
             <p>Add to favourite</p>
         </div>
         <ng-template #nonFavourite>
-            <div class="add-to-favourite added-to-favourite">
-                <img src="assets/home/icon_favourite_active.png" alt="Favourite" (click)="removeFromFavourite()">
+            <div class="add-to-favourite added-to-favourite" (click)="removeFromFavourite()">
+                <img src="assets/home/icon_favourite_active.png" alt="Favourite">
                 <p>Added to favourite</p>
             </div>
         </ng-template>
