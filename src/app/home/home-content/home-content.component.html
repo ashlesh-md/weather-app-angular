@@ -1,0 +1,38 @@
+<div class="home-content">
+    <div class="home-title">
+        <div class="date-time">
+            <p class="time-text">{{time}}</p>
+        </div>
+        <p class="city-name normal-text">
+            {{currentData.name}}, {{currentData.country}}
+        </p>
+        <div class="add-to-favourite" *ngIf="!isAddedToFavourite(currentData.name);else nonFavourite">
+            <img src="assets/home/icon_favourite.png" alt="Favourite" (click)="addToFavourite()">
+            <p>Add to favourite</p>
+        </div>
+        <ng-template #nonFavourite>
+            <div class="add-to-favourite added-to-favourite">
+                <img src="assets/home/icon_favourite_active.png" alt="Favourite" (click)="removeFromFavourite()">
+                <p>Added to favourite</p>
+            </div>
+        </ng-template>
+    </div>
+    <div class="center-highlight">
+        <img src="https://openweathermap.org/img/wn/{{currentData.weather.icon}}@4x.png" alt="Icon">
+        <div class="temperature">
+            <p class="temp-in-number">{{temperatureConverter({ isCelsius: isCelcius, temperature:
+                currentData.information.temp})}}</p>
+            <div class="temperature-type">
+                <div class="degree" [ngClass]=" {'temp-selected': isCelcius , 'temp-not-selected' :!isCelcius}"
+                    (click)="isCelcius=true">
+                    °C
+                </div>
+                <div class="fahrenheit" [ngClass]=" {'temp-selected': !isCelcius , 'temp-not-selected' :isCelcius}"
+                    (click)="isCelcius=false">
+                    °F
+                </div>
+            </div>
+        </div>
+        <p class="normal-text">{{currentData.weather.description}}</p>
+    </div>
+</div>

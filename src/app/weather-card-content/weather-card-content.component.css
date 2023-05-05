@@ -1,0 +1,153 @@
+.weather-card-content {
+    width: 100%;
+    padding: 5px 40px 5px 20px;
+    background-color: rgba(255, 255, 255, 0.10);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1px;
+    border-radius: 2px;
+}
+
+.mobile-view {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.weather-card-title {
+    flex: 0.6;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 15px;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+}
+
+.favourite {
+    flex: 0.1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* .favourite img {
+    height: 24px;
+    width: 24px;
+} */
+
+.climate-condition {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.climate-condition img {
+    height: 75px;
+    flex: 0.2;
+    margin-bottom: 5px;
+}
+
+.climate-item pre {
+    flex: 0.25;
+}
+
+.climate-item p {
+    flex: 0.5;
+}
+
+.climate-item {
+    flex: 1;
+}
+
+.climate-item {
+    padding-right: 10px;
+}
+
+.normal-text {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 15px;
+    letter-spacing: 1.5px;
+    text-align: start;
+    opacity: 0.8;
+    margin-bottom: 3px;
+    flex: 3.5;
+    text-transform: capitalize;
+}
+
+.bold-text {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0;
+    line-height: 15px;
+    letter-spacing: 1.5px;
+    text-align: start;
+    padding-left: 25px;
+    flex: 0.5;
+}
+
+.weather-card-title:hover {
+    color: rgb(250 208 90);
+    font-size: 18px;
+}
+
+
+
+@media screen and (max-width: 930px) {
+    .mobile-view {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+
+    .weather-card-title {
+        color: rgb(255 229 58);
+        font-weight: 500;
+        padding-bottom: 10px;
+        text-transform: capitalize;
+
+    }
+
+    .weather-card-content {
+        padding: 20px;
+    }
+
+    .climate-item {
+        padding: 0;
+    }
+
+    .climate-condition img {
+        height: 50px;
+    }
+
+    .climate-condition pre {
+        padding: 0px 10px 0px 10px;
+        width: 200px;
+    }
+
+    .bold-text {
+        font-size: 22px;
+        padding: 0;
+    }
+
+    .normal-text {
+        font-size: 14px;
+        padding: 0;
+        width: 20px;
+        overflow: scroll;
+    }
+
+    .weather-card-title:hover {
+        color: white;
+        font-size: 18px;
+    }
+
+
+}

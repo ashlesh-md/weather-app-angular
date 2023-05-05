@@ -1,0 +1,21 @@
+<div class="weather-card-content">
+    <div class="mobile-view">
+        <p (click)="changeCurrentData()" class="weather-card-title">{{weatherData.cityName}}</p>
+        <div class="climate-condition">
+            <img class="climate-item" src="https://openweathermap.org/img/wn/{{weatherData.icon}}@2x.png" alt="Icon">
+            <pre
+                class="climate-item"><span class="bold-text">{{weatherData.temperature}}</span><span class="normal-text">°c</span> </pre>
+            <p class="climate-item normal-text">{{weatherData.weatherDescription}}</p>
+        </div>
+    </div>
+    <div class="favourite" *ngIf="weatherData.isFavourite;else nonFavourite">
+        <img class="is-favourite" src="assets/home/icon_favourite_active.png" alt="favourite"
+            (click)="removeFromFavourite(weatherData)">
+    </div>
+    <ng-template #nonFavourite>
+        <div class="favourite" (click)="addToFavourite(weatherData)">
+            <img class="is-favourite" src="assets/home/icon_favourite.png" alt="favourite">
+        </div>
+
+    </ng-template>
+</div>

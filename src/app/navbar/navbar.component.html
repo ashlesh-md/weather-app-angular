@@ -1,0 +1,21 @@
+<div class="navbar-content">
+    <div class="horizontal-line"></div>
+    <ul>
+        <div [ngClass]="{'active': selectedMenu ===0 }">
+            <li class="normal-text tab-item" (click)="selectedMenu=0" [routerLink]="['']">HOME</li>
+            <div *ngIf="selectedMenu ===0" class="active-underline"></div>
+        </div>
+        <div [ngClass]="{'active': selectedMenu ===1}">
+            <li class="normal-text tab-item" (click)="selectedMenu=1" [routerLink]="['/favourites']">FAVOURITE</li>
+            <div *ngIf="selectedMenu ===1" class="active-underline"></div>
+        </div>
+        <div [ngClass]="{'active': selectedMenu ===2}">
+            <li class="normal-text tab-item" (click)="selectedMenu=2" [routerLink]="['/recent-searches']">RECENT SEARCH
+            </li>
+            <div *ngIf="selectedMenu ===2" class="active-underline"></div>
+        </div>
+    </ul>
+    <div class="date-time">
+        <p class="normal-text">{{time}}</p>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="footer-content">
+    <div class="horizontal-line"> </div>
+    <div class="home-footer">
+        <div class="list-of-weather-info">
+            <div class="weather-info" *ngFor="let item of weatherInformation">
+                <img src={{item.imageLink}} alt="">
+                <div class="info-value">
+                    <p class="normal-text">{{item.title}}</p>
+                    <p class="bold-text">{{item.value}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="header-content">
+    <div class="mobile-drawer">
+        <div *ngIf="isDrawerOpen" class="drawer-content">
+            <ul>
+                <li class="normal-text tab-item" [ngClass]="{'active':selectedMenu==0}"
+                    (click)="selectedMenu=0;isDrawerOpen=!isDrawerOpen;" [routerLink]="['']">Home</li>
+                <li class="normal-text tab-item" [ngClass]="{'active':selectedMenu==1}"
+                    (click)="selectedMenu=1;isDrawerOpen=!isDrawerOpen;" [routerLink]="['/favourites']">Favourite
+                </li>
+                <li class="normal-text tab-item" [ngClass]="{'active': selectedMenu==2}"
+                    (click)="selectedMenu=2;isDrawerOpen=!isDrawerOpen;" [routerLink]="['/recent-searches']">Recent
+                    Search
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="drawer" *ngIf="!mobileSearch">
+        <img src="assets/home/icon_menu_white.png" alt="icon_menu_white" (click)="isDrawerOpen=!isDrawerOpen">
+        <img src="assets/home/logo.png" alt="logo">
+
+        <img src="assets/home/icon_search_white.png" alt="Search" (click)="mobileSearch = true">
+    </div>
+    <img class="web-logo" src="assets/home/logo.png" alt="Weather App">
+    <div class="input-search" [ngClass]="{'mobile-search': mobileSearch}">
+        <input class="search-box" placeholder="Search City" type="text" [(ngModel)]="searchBoxContent"
+            (keyup.enter)="getWeatherData();">
+        <div class="search-cancel-icons" [ngClass]="{'icons': mobileSearch && searchBoxContent.length > 2}">
+            <button *ngIf="searchBoxContent.length > 2" (click)="getWeatherData();"><img
+                    src="assets/home/icon_search_white.png" alt="Search"></button>
+            <button *ngIf="mobileSearch" (click)="mobileSearch=false"><img src="assets/home/icon-close.png"
+                    alt="Search"></button>
+        </div>
+    </div>
+</div>

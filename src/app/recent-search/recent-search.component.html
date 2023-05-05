@@ -1,0 +1,17 @@
+<app-header [selectedMenu]="2"></app-header>
+<app-navbar [selectedMenu]="2"></app-navbar>
+<div class="recent-search-info" *ngIf="weatherData.length > 0">
+    <p>You recently searched for</p>
+    <p (click)="clearRecentSearch()">Clear all</p>
+</div>
+
+<div class="weather-data-cards" *ngIf="weatherData.length > 0;else emptyMessage">
+    <app-weather-card-content *ngFor="let item of weatherData.reverse()"
+        [weatherData]="item"></app-weather-card-content>
+</div>
+<ng-template #emptyMessage>
+    <div class="empty-message">
+        <img src="assets/home/icon_nothing.png" alt="">
+
+    </div>
+</ng-template>
